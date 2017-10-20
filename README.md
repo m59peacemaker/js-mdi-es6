@@ -5,8 +5,8 @@
 `mdi-es6` is also compatible with CommonJS, but bear in mind, CommonJS lacks tree shaking.
 
 ```js
-import { cake, addAPhoto, usb, usb_18, usb_24, usb_48 } from 'md-svg'
-// const { cake, addAPhoto, usb, usb_18, usb_24, usb_48 } = require('md-svg')
+import { cake, addAPhoto, usb, usb_18, usb_24, usb_48 } from 'mdi-es6'
+// const { cake, addAPhoto, usb, usb_18, usb_24, usb_48 } = require('mdi-es6')
 
 const range = document.createRange()
 const cakeSvgNode = range.createContextualFragment(cake)
