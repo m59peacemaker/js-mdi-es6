@@ -1,5 +1,5 @@
 {
-  "name": "mdi-svg",
+  "name": "mdi-es6",
   "version": "0.1.0",
   "description": "material-design-icons as an es6 module with named exports for each icon as a string of svg markup.",
   "main": "build/index.cjs.js",
@@ -29,7 +29,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/m59peacemaker/js-mdi-svg"
+    "url": "https://github.com/m59peacemaker/js-mdi-es6"
   },
   "author": "Johnny Hauser <johnnyhauser@gmail.com>",
   "license": "CC0-1.0",

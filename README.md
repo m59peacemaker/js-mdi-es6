@@ -1,9 +1,12 @@
-# mdi-svg
+# mdi-es6
 
 > `[material-design-icons](https://github.com/google/material-design-icons)` as an es6 module with named exports for each icon as a string of svg markup.
 
+`mdi-es6` is also compatible with CommonJS, but bear in mind, CommonJS lacks tree shaking.
+
 ```js
 import { cake, addAPhoto, usb, usb_18, usb_24, usb_48 } from 'md-svg'
+// const { cake, addAPhoto, usb, usb_18, usb_24, usb_48 } = require('md-svg')
 
 const range = document.createRange()
 const cakeSvgNode = range.createContextualFragment(cake)
