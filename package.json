@@ -1,0 +1,45 @@
+{
+  "name": "mdi-svg",
+  "version": "0.1.0",
+  "description": "material-design-icons as an es6 module with named exports for each icon as a string of svg markup.",
+  "main": "build/index.cjs.js",
+  "module": "build/index.js",
+  "scripts": {
+    "build": "mkdir -p build && (./scripts/generate-svg-module.js > build/index.js) && rollup -c",
+    "clean": "rm -r build",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "material",
+    "design",
+    "icons",
+    "icon",
+    "md",
+    "svg",
+    "module",
+    "export",
+    "single",
+    "html",
+    "string",
+    "tree-shake",
+    "treeshake",
+    "tree",
+    "shake",
+    "browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m59peacemaker/js-mdi-svg"
+  },
+  "author": "Johnny Hauser <johnnyhauser@gmail.com>",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "case": "^1.5.3",
+    "fs-extra": "^4.0.2",
+    "globby": "^6.1.0",
+    "jsdom": "^11.3.0",
+    "material-design-icons": "^3.0.1",
+    "rollup": "^0.50.0",
+    "sort-array-by": "^1.0.0"
+  }
+}
