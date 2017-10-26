@@ -2,10 +2,19 @@
 
 const path = require('path')
 const fs = require('fs-extra')
+const { JSDOM } = require('jsdom')
 const glob = require('globby')
 const Case = require('case')
 const sortBy = require('sort-array-by')
 const iconPath = require('material-design-icons').STATIC_PATH
+
+// get rid of fill attributes --> https://github.com/google/material-design-icons/issues/281
+const stripFill = html => {
+  const { window } = new JSDOM(html)
+  ;[ ...window.document.querySelectorAll('[fill]') ]
+    .forEach(node => node.removeAttribute('fill'))
+  return window.document.querySelector('svg').outerHTML
+}
 
 const flipFirstWords = string => {
   const words = string.split('_')
@@ -35,8 +44,9 @@ const generate = async () => {
       const fileName = path.basename(filePath, path.extname(filePath))
       const name = makeExportNameFromFileName(fileName)
       const html = (await fs.readFile(filePath)).toString()
+      const fixedHtml = stripFill(html)
 
-      return { name, html }
+      return { name, html: fixedHtml }
     })
   ))
   const sortedSvgs = sortBy(v => v.name, svgs)
